@@ -1,170 +1,165 @@
 <p align="center">
-<img src="https://placehold.co/150x150/ADD8E6/000000?text=Aetherbot+Logo" alt="Aetherbot Logo" width="150"/>
+  <img src="https://github.com/images/mona-whisper.gif" alt="Aetherbot Logo" width="150"/>
 </p>
 
-<h1 align="center">
-<b>Aetherbot - OSINT & Investigation Bot</b>
-</h1>
+<h1 align="center"><b>Aetherbot - OSINT & Investigation Bot</b></h1>
 
 <p align="center">
-A modular, fast, and powerful Telegram Bot built using Python and Pyrogram for OSINT and investigation tasks.
+  A modular, fast, and powerful Telegram Bot built using Python and Pyrogram for OSINT and investigation tasks.
 </p>
 
 <p align="center">
-<a href="https://github.com/aes-co/aetherbot"><img src="https://img.shields.io/github/stars/aes-co/aetherbot?style=flat-square&color=yellow" alt="Stars"/></a>
-<a href="https://github.com/aes-co/aetherbot/fork"><img src="https://img.shields.io/github/forks/aes-co/aetherbot?style=flat-square&color=orange" alt="Forks"/></a>
-<a href="https://github.com/aes-co/aetherbot"><img src="https://img.shields.io/github/repo-size/aes-co/aetherbot?style=flat-square&color=green" alt="Repo Size"/></a>
-<img src="https://img.shields.io/badge/Python-3.9+-blue?style=flat-square" alt="Python Version"/>
-<img src="https://img.shields.io/badge/License-AGPL--3.0-lightgrey?style=flat-square" alt="License"/>
-<img src="https://img.shields.io/badge/Maintained-Yes-brightgreen?style=flat-square" alt="Maintained"/>
-<img src="https://img.shields.io/badge/good%20first%20issue-welcome-blueviolet?style=flat-square" alt="Good First Issue"/>
-<img src="https://img.shields.io/badge/hacktoberfest-accepted-orange?style=flat-square" alt="Hacktoberfest"/>
-</p>    
-🧠 Overview
+  <a href="https://github.com/aes-co/aetherbot"><img src="https://img.shields.io/github/stars/aes-co/aetherbot?style=flat-square&color=yellow" alt="Stars"/></a>
+  <a href="https://github.com/aes-co/aetherbot/fork"><img src="https://img.shields.io/github/forks/aes-co/aetherbot?style=flat-square&color=orange" alt="Forks"/></a>
+  <a href="https://github.com/aes-co/aetherbot"><img src="https://img.shields.io/github/repo-size/aes-co/aetherbot?style=flat-square&color=green" alt="Repo Size"/></a>
+  <img src="https://img.shields.io/badge/Python-3.9+-blue?style=flat-square" alt="Python Version"/>
+  <img src="https://img.shields.io/badge/License-AGPL--3.0-lightgrey?style=flat-square" alt="License"/>
+  <img src="https://img.shields.io/badge/Maintained-Yes-brightgreen?style=flat-square" alt="Maintained"/>
+  <img src="https://img.shields.io/badge/good%20first%20issue-welcome-blueviolet?style=flat-square" alt="Good First Issue"/>
+  <img src="https://img.shields.io/badge/hacktoberfest-accepted-orange?style=flat-square" alt="Hacktoberfest"/>
+</p>
 
-Aetherbot adalah bot Telegram modular yang dirancang untuk membantu dalam tugas-tugas Open-Source Intelligence (OSINT) dan investigasi. Dibangun menggunakan Pyrogram, Aetherbot menyediakan berbagai alat untuk mengumpulkan, menganalisis, dan melaporkan informasi dari sumber terbuka, terutama yang terkait dengan Telegram dan layanan eksternal lainnya.
-🚀 Features
+---
 
-Berikut adalah perintah-perintah utama yang tersedia di Aetherbot:
-1. Kapabilitas OSINT
+## 🧠 Overview
 
-    /userinfo <username_atau_id> — Dapatkan informasi publik pengguna Telegram.
+**Aetherbot** adalah bot Telegram modular berbasis **Pyrogram** untuk tugas Open-Source Intelligence (OSINT) dan investigasi. Dengan arsitektur fleksibel, Aetherbot mampu mengumpulkan, menganalisis, dan melaporkan data dari Telegram maupun layanan eksternal.
 
-    /channelinfo <username_atau_id> — Dapatkan informasi publik saluran atau grup Telegram.
+---
 
-    /analyze_link <url> — Pindai tautan untuk potensi ancaman (VirusTotal, pratinjau).
+## 🚀 Features
 
-    /reverse_image (balas ke foto) — Lakukan pencarian gambar terbalik menggunakan web scraping.
+### 1. OSINT Capabilities
 
-    /hunterio <domain_atau_email> — Cari email terkait domain atau verifikasi alamat email via Hunter.io.
+* `/userinfo <username/id>` — Info publik pengguna Telegram.
+* `/channelinfo <username/id>` — Info publik grup atau channel.
+* `/analyze_link <url>` — Analisis tautan (VirusTotal, pratinjau).
+* `/reverse_image` *(reply photo)* — Pencarian gambar terbalik.
+* `/hunterio <domain/email>` — Pencarian & validasi email (Hunter.io).
+* `/hibp <email>` — Cek kebocoran data (HaveIBeenPwned).
+* `/shodan <query/ip>` — Info perangkat (Shodan).
 
-    /hibp <email> — Periksa kebocoran data untuk alamat email via HaveIBeenPwned.
+### 2. Investigation & Reporting
 
-    /shodan <query_atau_ip> — Cari perangkat yang terhubung ke internet via Shodan.
+* `/newcase <judul>` — Buat kasus investigasi baru.
+* `/add_evidence <case_id>` *(reply message)* — Tambah bukti.
+* `/listcases` — Lihat semua kasus.
+* `/viewcase <case_id>` — Lihat detail kasus.
+* `/report <case_id>` — Hasilkan laporan PDF.
 
-2. Fitur Investigasi & Pelaporan
+### 3. Admin & UX
 
-    /newcase <judul_kasus> — Buat kasus investigasi baru.
+* `/setadmin <user_id>` — Jadikan user sebagai admin.
+* `/removeadmin <user_id>` — Hapus admin.
+* `/listadmins` — Lihat daftar admin.
+* `/monitor_keyword <chat_id> <keyword>` — Pantau kata kunci.
+* `/stop_monitor <chat_id> <keyword>` — Hentikan pemantauan.
+* `/help` — Bantuan umum.
+* `/help osint`, `/help investigation`, `/help admin` — Bantuan spesifik.
 
-    /add_evidence <case_id> (balas ke pesan) — Tambahkan pesan/media sebagai bukti ke kasus.
+---
 
-    /listcases — Lihat daftar kasus investigasi Anda.
+## ⚙️ Setup
 
-    /viewcase <case_id> — Lihat detail dan bukti dalam kasus.
+### 1. Clone Repository
 
-    /report <case_id> — Hasilkan laporan PDF komprehensif untuk kasus.
-
-3. Peningkatan Pengalaman Pengguna & Administrasi
-
-    /setadmin <user_id> — Atur pengguna sebagai admin.
-
-    /removeadmin <user_id> — Hapus pengguna dari admin.
-
-    /listadmins — Daftar semua admin yang terdaftar.
-
-    /monitor_keyword <chat_id> <keyword> — Mulai memantau kata kunci di grup/saluran publik.
-
-    /stop_monitor <chat_id> <keyword> — Hentikan pemantauan kata kunci tertentu.
-
-    /help — Bantuan umum.
-
-    /help osint — Bantuan khusus OSINT.
-
-    /help investigation — Bantuan khusus investigasi.
-
-    /help admin — Bantuan khusus admin.
-
-⚙️ Setup
-1. Klon Repositori (atau Buat Struktur Manual)
-
-Jika Anda belum melakukannya, klon repositori Aetherbot atau buat struktur folder seperti yang telah kita diskusikan. Pastikan Anda berada di direktori tempat Anda ingin folder aetherbot dibuat, lalu jalankan script setup otomatis yang telah kita buat sebelumnya:
-
-# Jika Anda ingin membuat folder aetherbot baru:
+```bash
 git clone https://github.com/aes-co/aetherbot.git
 cd aetherbot
+```
 
-# Atau jika Anda sudah di dalam folder proyek yang ingin digunakan,
-# jalankan script setup otomatis yang telah kita buat sebelumnya (dari percakapan ini).
-# Contoh bagian awal script:
-# #!/bin/bash
-# mkdir core
-# mkdir -p modules/osint modules/investigation modules/admin modules/general
-# ... dst
+Atau jika sudah ada folder proyek, gunakan struktur otomatis:
 
-2. Instal Dependensi Python
+```bash
+# contoh (buat folder manual)
+mkdir core
+mkdir -p modules/osint modules/investigation modules/admin modules/general
+```
 
-Pastikan Anda berada di direktori root proyek (aetherbot/).
+### 2. Install Dependencies
 
+```bash
 pip install -r requirements.txt
+```
 
-3. Konfigurasi Variabel Lingkungan (.env)
+### 3. Configure `.env`
 
-Buat file bernama .env di direktori root proyek Anda (sejajar dengan main.py). Jangan pernah meng-commit file ini ke Git!
+Buat file `.env` di root proyek:
 
-Isi file .env dengan kredensial Anda:
-
+```ini
 API_ID=YOUR_TELEGRAM_API_ID
 API_HASH=YOUR_TELEGRAM_API_HASH
 BOT_TOKEN=YOUR_TELEGRAM_BOT_TOKEN
-MONGO_URI=mongodb://localhost:27017/ # Ganti jika MongoDB Anda di cloud (misal: MongoDB Atlas URI)
-LOG_CHANNEL_ID=-1001234567890 # ID saluran untuk log bot (dapatkan dari @JsonDumpBot)
-ADMIN_IDS=12345678,98765432 # ID Telegram Anda dan admin lain, pisahkan koma
+MONGO_URI=mongodb://localhost:27017/
+LOG_CHANNEL_ID=-1001234567890
+ADMIN_IDS=12345678,98765432
 
-VIRUSTOTAL_API_KEY=YOUR_VIRUSTOTAL_API_KEY_HERE # Opsional
-HUNTER_IO_API_KEY=YOUR_HUNTER_IO_API_KEY_HERE # Opsional
-SHODAN_API_KEY=YOUR_SHODAN_API_KEY_HERE # Opsional
-HAVEIBEENPWNED_API_KEY=YOUR_HAVEIBEENPWNED_API_KEY_HERE # Opsional
+# Optional
+VIRUSTOTAL_API_KEY=...
+HUNTER_IO_API_KEY=...
+SHODAN_API_KEY=...
+HAVEIBEENPWNED_API_KEY=...
+```
 
-4. Jalankan Bot
+### 4. Run Bot
 
-Pastikan server MongoDB Anda sedang berjalan. Kemudian, dari direktori root proyek Anda, jalankan bot:
+Pastikan MongoDB aktif lalu jalankan:
 
+```bash
 python main.py
+```
 
-Bot akan mulai berjalan dan Anda akan melihat log di terminal Anda.
-📂 Struktur Proyek
+---
 
-Proyek Aetherbot diatur secara modular untuk kemudahan pengembangan dan pemeliharaan:
+## 📂 Project Structure
 
+```
 aetherbot/
-├── core/                   # Konfigurasi inti, koneksi DB, klien Pyrogram, dekorator
-├── modules/                # Modul fitur utama (OSINT, Investigasi, Admin, Umum)
-│   ├── admin/              # Fitur admin (manajemen peran, monitoring)
-│   ├── general/            # Perintah umum (help, start)
-│   ├── investigation/      # Fitur manajemen kasus, bukti, dan laporan
-│   └── osint/              # Fitur OSINT (info user/channel, analisis link, API eksternal)
-├── utils/                  # Fungsi bantu, filter kustom, validator
-├── models/                 # Definisi skema data untuk MongoDB (User, Case, Evidence)
-├── handlers/               # Penanganan pesan dan perintah umum Pyrogram
-├── main.py                 # Titik masuk utama aplikasi
-├── requirements.txt        # Daftar dependensi Python
-├── .env.example            # Contoh file variabel lingkungan
-├── Dockerfile              # Konfigurasi Docker untuk deployment
-└── README.md               # Dokumentasi proyek
+├── core/             # Konfigurasi inti, DB, Pyrogram
+├── modules/
+│   ├── admin/        # Fitur admin
+│   ├── general/      # Perintah umum
+│   ├── investigation/# Manajemen kasus & bukti
+│   └── osint/        # OSINT tools
+├── utils/            # Fungsi bantu
+├── models/           # Skema MongoDB
+├── handlers/         # Handler Pyrogram
+├── main.py           # Entry point
+├── requirements.txt  # Dependencies
+├── .env.example      # Contoh .env
+├── Dockerfile        # Docker config
+└── README.md         # Dokumentasi ini
+```
 
-🤝 Credits
+---
 
-    Pyrogram — Pustaka utama yang digunakan untuk berinteraksi dengan Telegram API.
+## 🤝 Credits
 
-    Kontributor Aetherbot — Terima kasih kepada semua yang berkontribusi pada proyek ini.
+* **[Pyrogram](https://github.com/pyrogram/pyrogram)** — Telegram API framework.
+* **Kontributor Aetherbot** — Terima kasih untuk kontribusi kalian 💜
 
-📄 License
+---
 
-Proyek ini dilisensikan di bawah AGPL-3.0 License.
-📊 Want to Contribute?
+## 📄 License
 
-Kami menyambut kontribusi dari komunitas! 🤩
+This project is licensed under the **AGPL-3.0 License**.
 
-    Menemukan bug? Buka issue.
+---
 
-    Punya ide fitur? Mulai diskusi.
+## 📊 Want to Contribute?
 
-    Ingin meningkatkan kode? Cukup fork repositori, push perubahan, dan buat Pull Request!
+Kami sangat terbuka untuk kontribusi! 💫
 
-Kontribusi Anda sangat dihargai dan akan dikreditkan ✨
+* Ketemu bug? **Buka issue**
+* Punya fitur baru? **Buat diskusi**
+* Mau kontribusi langsung? **Fork → commit → Pull Request**
 
-Mencari kontribusi pertama Anda? Lihat good first issues kami!
+Lihat label `good first issue` untuk pemula!
 
-Berpartisipasi dalam Hacktoberfest? Pull Request Anda di sini dihitung!
+Berpartisipasi di Hacktoberfest? PR kamu dihitung juga!
 
-<p align="center">Made with 💖 by aes-co</p>
+---
+
+<p align="center">
+  <i>Made with ❤️ by <a href="https://github.com/aes-co">aes-co</a></i>
+</p>
