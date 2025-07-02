@@ -1,0 +1,9 @@
+pyrogram==2.0.106
+python-dotenv
+motor
+requests
+beautifulsoup4
+lxml
+Pillow
+matplotlib
+reportlab

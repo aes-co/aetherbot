@@ -1,18 +1,31 @@
-from pyrogram import Client, filters
-import os
-from dotenv import load_dotenv
+import asyncio
+import logging
+from core.client import bot_client
+from core.database import connect_db, close_db
+from core.config import Config
 
-load_dotenv()
-
-app = Client(
-    "aetherbot",
-    api_id=int(os.getenv("API_ID")),
-    api_hash=os.getenv("API_HASH"),
-    bot_token=os.getenv("BOT_TOKEN")
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(),
+        logging.FileHandler("aetherbot.log")
+    ]
 )
+log = logging.getLogger(__name__)
 
-@app.on_message(filters.command("start"))
-async def start(client, message):
-    await message.reply_text("🕵️‍♂️ Welcome to Aetherbot! Let's investigate.")
+async def main():
+    log.info("Starting Aetherbot...")
+    try:
+        await connect_db()
+        await bot_client.start()
+        log.info("Aetherbot started successfully!")
+        await bot_client.idle()
+    except Exception as e:
+        log.error(f"Error starting Aetherbot: {e}")
+    finally:
+        await close_db()
+        log.info("Aetherbot stopped.")
 
-app.run()
+if __name__ == "__main__":
+    asyncio.run(main())
